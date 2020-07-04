@@ -20,9 +20,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	// drag the candies
 	squares.forEach((square) => square.addEventListener("dragstart", dragStart));
-	squares.forEach((square) => square.addEventListener("dragend", dragStart));
-	squares.forEach((square) => square.addEventListener("dragsover", dragStart));
-	squares.forEach((square) => square.addEventListener("dragcenter", dragStart));
-	squares.forEach((square) => square.addEventListener("dragleave", dragStart));
-	squares.forEach((square) => square.addEventListener("drop", dragStart));
+	squares.forEach((square) => square.addEventListener("dragend", dragEnd));
+	squares.forEach((square) => square.addEventListener("dragsover", dragOver));
+	squares.forEach((square) => square.addEventListener("dragcenter", dragEnter));
+	squares.forEach((square) => square.addEventListener("dragleave", dragLeave));
+	squares.forEach((square) => square.addEventListener("drop", dragDrop));
+
+	function dragStart() {
+		console.log(this.id, "dragstart");
+	}
+	function dragOver() {
+		console.log(this.id, "dragover");
+	}
+	function dragEnter() {
+		s;
+		console.log(this.id, "dragenter");
+	}
+	function dragLeave() {
+		console.log(this.id, "dragleave");
+	}
+	function dragEnd() {
+		console.log(this.id, "dragend");
+	}
+	function dragDrop() {
+		console.log(this.id, "dragdrop");
+	}
 });
